@@ -1,0 +1,16 @@
+fastapi
+uvicorn
+requests
+pandas
+ipykernel
+numpy
+yfinance
+groq
+dotenv
+requests
+pydantic
+langchain 
+langchain-groq
+langgraph
+tavily-python
+langchain-google-genai
