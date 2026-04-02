@@ -6,7 +6,7 @@ from app.api.stock_api import router as stock_router
 from app.api.scan_api import router as scan_router
 from app.api.trade_api import router as trade_router
 
-# from app.api.portfolio_api import router as portfolio_router
+from app.api.portfolio_api import router as portfolio_router
 
 from app.logging_config import setup_logging
 
@@ -37,7 +37,7 @@ def create_app() -> FastAPI:
         app.include_router(stock_router, prefix="")
         app.include_router(scan_router, prefix="")
         app.include_router(trade_router, prefix="")
-        # app.include_router(portfolio_router, prefix="")
+        app.include_router(portfolio_router, prefix="")
         
         logger.info("main: Application routers registered successfully.")
         
