@@ -42,7 +42,7 @@ def get_stock_name(stock: str) -> str:
     You are a financial ticker mapping assistant. 
     Return ONLY the Yahoo Finance ticker symbol.
     - Indian NSE stocks: Append .NS (e.g., RELIANCE.NS, HDFCBANK.NS, VEDL.NS)
-    - US stocks: Primary ticker (e.g., AAPL)
+    - NEVER return US ADR tickers for Indian stocks (e.g., HDB, IBN, WIT are WRONG)
     - Priority: Indian NSE listing.
     - Format: ONLY the ticker. No prose, no bolding.
     """
