@@ -52,8 +52,10 @@ def fundamental_node(state: StockState) -> dict:
                 parsed = json.loads(last_message)
                 logger.info(f"fundamental_agent: Completed for {state['symbol']}")
                 return {"fundamental": parsed}
-            except Exception:
-                pass
+            except json.JSONDecodeError:
+                log.warning(f"fundamental_agent: Received invalid JSON string for {state['symbol']}")
+            except Exception as e:
+                log.error(f"fundamental_agent: Unexpected error parsing result for {state['symbol']} - {e}")
 
         # Fallback: grab raw tool result and classify locally
         for message in result["messages"]:
@@ -82,8 +84,8 @@ def fundamental_node(state: StockState) -> dict:
                         "profit_margin": raw.get("profit_margin"),
                         "debt_to_equity": raw.get("debt_to_equity")
                     }}
-                except Exception:
-                    pass
+                except Exception as e:
+                    log.error(f"fundamental_agent: Fallback parsing failed for {state['symbol']} - {e}")
 
         logger.error(f"fundamental_agent: Could not extract result for {state['symbol']}")
         return {"fundamental": {
