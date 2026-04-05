@@ -3,7 +3,7 @@ from langgraph.graph import StateGraph, START, END
 from app.state.stock_state import StockState
 from app.agents.technical_agent import technical_node
 from app.agents.news_agent import news_node
-from app.agents.fundametal_agent import fundamental_node
+from app.agents.fundamental_agent import fundamental_node
 from app.agents.decision_agent import decision_node
 from app.tools.market_data_tool import get_stock_name, fetch_latest_price
 
@@ -86,7 +86,7 @@ def run_stock_graph(symbol: str) -> dict:
 # from app.state.stock_state import StockState
 # from app.agents.technical_agent import technical_node
 # from app.agents.news_agent import news_node
-# from app.agents.fundametal_agent import fundamental_node
+# from app.agents.fundamental_agent import fundamental_node
 # from app.agents.decision_agent import decision_node
 # from app.tools.market_data_tool import get_stock_name, fetch_latest_price
 
