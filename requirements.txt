@@ -15,3 +15,4 @@ langgraph
 tavily-python
 langchain-google-genai
 python-multipart
+redis
